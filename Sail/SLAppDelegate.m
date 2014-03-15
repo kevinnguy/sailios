@@ -8,12 +8,17 @@
 
 #import "SLAppDelegate.h"
 
+#import "SLMainTableViewController.h"
+
 @implementation SLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    SLMainTableViewController *rootViewController = [[SLMainTableViewController alloc] init];
+    self.window.rootViewController = rootViewController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

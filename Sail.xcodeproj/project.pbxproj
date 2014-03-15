@@ -19,6 +19,10 @@
 		0A0DF1B118D4DCA000372732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0DF19918D4DCA000372732 /* UIKit.framework */; };
 		0A0DF1B918D4DCA000372732 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A0DF1B718D4DCA000372732 /* InfoPlist.strings */; };
 		0A0DF1BB18D4DCA000372732 /* SailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1BA18D4DCA000372732 /* SailTests.m */; };
+		0A0DF1C618D4DEF700372732 /* SLMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */; };
+		0A0DF1C918D4DF6300372732 /* SLBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1C818D4DF6300372732 /* SLBin.m */; };
+		0A46C20818D4E387009D3339 /* SLBinCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20718D4E387009D3339 /* SLBinCollectionView.m */; };
+		0A46C20E18D4E41B009D3339 /* SLBinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,14 @@
 		0A0DF1B618D4DCA000372732 /* SailTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SailTests-Info.plist"; sourceTree = "<group>"; };
 		0A0DF1B818D4DCA000372732 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A0DF1BA18D4DCA000372732 /* SailTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SailTests.m; sourceTree = "<group>"; };
+		0A0DF1C418D4DEF700372732 /* SLMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMainTableViewController.h; sourceTree = "<group>"; };
+		0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMainTableViewController.m; sourceTree = "<group>"; };
+		0A0DF1C718D4DF6200372732 /* SLBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBin.h; sourceTree = "<group>"; };
+		0A0DF1C818D4DF6300372732 /* SLBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBin.m; sourceTree = "<group>"; };
+		0A46C20618D4E387009D3339 /* SLBinCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBinCollectionView.h; path = ../SLBinCollectionView.h; sourceTree = "<group>"; };
+		0A46C20718D4E387009D3339 /* SLBinCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBinCollectionView.m; path = ../SLBinCollectionView.m; sourceTree = "<group>"; };
+		0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinTableViewCell.h; sourceTree = "<group>"; };
+		0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBinTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +121,14 @@
 			children = (
 				0A0DF1A418D4DCA000372732 /* SLAppDelegate.h */,
 				0A0DF1A518D4DCA000372732 /* SLAppDelegate.m */,
+				0A0DF1C418D4DEF700372732 /* SLMainTableViewController.h */,
+				0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */,
+				0A0DF1C718D4DF6200372732 /* SLBin.h */,
+				0A0DF1C818D4DF6300372732 /* SLBin.m */,
+				0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */,
+				0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */,
+				0A46C20618D4E387009D3339 /* SLBinCollectionView.h */,
+				0A46C20718D4E387009D3339 /* SLBinCollectionView.m */,
 				0A0DF1A718D4DCA000372732 /* Images.xcassets */,
 				0A0DF19C18D4DCA000372732 /* Supporting Files */,
 			);
@@ -240,8 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0DF1C618D4DEF700372732 /* SLMainTableViewController.m in Sources */,
 				0A0DF1A218D4DCA000372732 /* main.m in Sources */,
+				0A46C20E18D4E41B009D3339 /* SLBinTableViewCell.m in Sources */,
+				0A0DF1C918D4DF6300372732 /* SLBin.m in Sources */,
 				0A0DF1A618D4DCA000372732 /* SLAppDelegate.m in Sources */,
+				0A46C20818D4E387009D3339 /* SLBinCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +468,7 @@
 				0A0DF1C018D4DCA000372732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A0DF1C118D4DCA000372732 /* Build configuration list for PBXNativeTarget "SailTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +477,7 @@
 				0A0DF1C318D4DCA000372732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
