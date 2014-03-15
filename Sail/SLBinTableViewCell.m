@@ -21,7 +21,7 @@ NSString *const kSLBinCollectionViewIdentifier = @"SLBinCollectionViewIdentifier
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         // Create layout
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        LXReorderableCollectionViewFlowLayout *layout = [[LXReorderableCollectionViewFlowLayout alloc] init];
         layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
         layout.itemSize = CGSizeMake(60, 60);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

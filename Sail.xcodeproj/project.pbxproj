@@ -23,6 +23,7 @@
 		0A0DF1C918D4DF6300372732 /* SLBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1C818D4DF6300372732 /* SLBin.m */; };
 		0A46C20818D4E387009D3339 /* SLBinCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20718D4E387009D3339 /* SLBinCollectionView.m */; };
 		0A46C20E18D4E41B009D3339 /* SLBinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */; };
+		86A0CF965FD2451591D5A11E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457247BDC31B4CD5AD9516B4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +57,12 @@
 		0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMainTableViewController.m; sourceTree = "<group>"; };
 		0A0DF1C718D4DF6200372732 /* SLBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBin.h; sourceTree = "<group>"; };
 		0A0DF1C818D4DF6300372732 /* SLBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBin.m; sourceTree = "<group>"; };
-		0A46C20618D4E387009D3339 /* SLBinCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLBinCollectionView.h; path = ../SLBinCollectionView.h; sourceTree = "<group>"; };
-		0A46C20718D4E387009D3339 /* SLBinCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLBinCollectionView.m; path = ../SLBinCollectionView.m; sourceTree = "<group>"; };
+		0A46C20618D4E387009D3339 /* SLBinCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinCollectionView.h; sourceTree = "<group>"; };
+		0A46C20718D4E387009D3339 /* SLBinCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBinCollectionView.m; sourceTree = "<group>"; };
 		0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinTableViewCell.h; sourceTree = "<group>"; };
 		0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBinTableViewCell.m; sourceTree = "<group>"; };
+		457247BDC31B4CD5AD9516B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71B5C7DC150F43B1AC21462C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 				0A0DF19818D4DCA000372732 /* CoreGraphics.framework in Frameworks */,
 				0A0DF19A18D4DCA000372732 /* UIKit.framework in Frameworks */,
 				0A0DF19618D4DCA000372732 /* Foundation.framework in Frameworks */,
+				86A0CF965FD2451591D5A11E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 				0A0DF1B418D4DCA000372732 /* SailTests */,
 				0A0DF19418D4DCA000372732 /* Frameworks */,
 				0A0DF19318D4DCA000372732 /* Products */,
+				71B5C7DC150F43B1AC21462C /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +117,7 @@
 				0A0DF19718D4DCA000372732 /* CoreGraphics.framework */,
 				0A0DF19918D4DCA000372732 /* UIKit.framework */,
 				0A0DF1AE18D4DCA000372732 /* XCTest.framework */,
+				457247BDC31B4CD5AD9516B4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A0DF1BE18D4DCA000372732 /* Build configuration list for PBXNativeTarget "Sail" */;
 			buildPhases = (
+				0DD33A4E1F244E86B94FF755 /* Check Pods Manifest.lock */,
 				0A0DF18E18D4DCA000372732 /* Sources */,
 				0A0DF18F18D4DCA000372732 /* Frameworks */,
 				0A0DF19018D4DCA000372732 /* Resources */,
+				36D246B0804A45B88AE72C92 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +262,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DD33A4E1F244E86B94FF755 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36D246B0804A45B88AE72C92 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A0DF18E18D4DCA000372732 /* Sources */ = {
@@ -383,6 +424,7 @@
 		};
 		0A0DF1BF18D4DCA000372732 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B5C7DC150F43B1AC21462C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -396,6 +438,7 @@
 		};
 		0A0DF1C018D4DCA000372732 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B5C7DC150F43B1AC21462C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

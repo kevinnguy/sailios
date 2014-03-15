@@ -11,6 +11,8 @@
 #import "SLBin.h"
 #import "SLBinCollectionView.h"
 
+#import "LXReorderableCollectionViewFlowLayout.h"
+
 FOUNDATION_EXPORT NSString *const kSLBinTableViewCellIdentifier;
 FOUNDATION_EXPORT NSString *const kSLBinCollectionViewIdentifier;
 
