@@ -12,5 +12,5 @@
 @property (nonatomic, copy) NSString *binId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *notification;
-
+@property (nonatomic, strong) NSNumber *emailCount;
 @end
