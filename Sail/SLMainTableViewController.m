@@ -69,13 +69,22 @@
         cell = [[SLBinTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSLBinTableViewCellIdentifier];
     }
     
+    SLBin *bin = self.binsArray[indexPath.row];
+    cell.nameLabel.text = bin.name;
+    cell.notificationSwitch.on = [bin.notification boolValue];
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 66;
+    return 1 + 1 + 30 + 15 + 15+ 56; // separator + separator + label + layout + layout + collection view cell
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 #pragma mark - UICollectionViewDataSource

@@ -16,6 +16,8 @@ FOUNDATION_EXPORT NSString *const kSLBinCollectionViewIdentifier;
 
 @interface SLBinTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UISwitch *notificationSwitch;
 @property (nonatomic, strong) SLBinCollectionView *collectionView;
 
 - (void)setBinCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate index:(NSInteger)index;
