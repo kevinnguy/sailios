@@ -8,11 +8,16 @@
 
 #import "SLMainTableViewController.h"
 
+#import "SLAPIManager.h"
 #import "SLBinTableViewCell.h"
 
-@interface SLMainTableViewController () <LXReorderableCollectionViewDataSource, LXReorderableCollectionViewDelegateFlowLayout>
+@interface SLMainTableViewController () <LXReorderableCollectionViewDataSource, LXReorderableCollectionViewDelegateFlowLayout, SLAPIManagerDelegate>
+
+@property (nonatomic, strong) SLUser *user;
+
 @property (nonatomic, strong) NSMutableArray *binsArray;
 @property (nonatomic, strong) NSMutableDictionary *binsContentOffsetIndexDictionary; // Used to remember the offset of content in a bin when scrolling
+
 @end
 
 @implementation SLMainTableViewController
@@ -21,31 +26,43 @@
 {
     [super viewDidLoad];
     
-    [self setupBins];
+    [self setupNavigationBar];
+
+    self.binsArray = [NSMutableArray new];
     self.binsContentOffsetIndexDictionary = [NSMutableDictionary new];
+    
+    [[SLAPIManager sharedManager] getUserBinsWithURL:[NSURL URLWithString:@"http://pymailserver.herokuapp.com/users/12/bins"]];
+    [[SLAPIManager sharedManager] getUserProfileWithURL:[NSURL URLWithString:@"http://pymailserver.herokuapp.com/users/12/profile"]];
 }
 
-- (void)setupBins
+- (void)setupNavigationBar
 {
-    // Create demo bins
-    SLBin *familyAndFriendsBin = [[SLBin alloc] init];
-    familyAndFriendsBin.name = @"Family and Friends";
-    familyAndFriendsBin.notification = @YES;
-    familyAndFriendsBin.emailCount = @15;
+    // Left button
+    UIBarButtonItem *profileBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStyleBordered target:self action:@selector(profileBarButtonPressed)];
+    self.navigationItem.leftBarButtonItem = profileBarButton;
     
-    SLBin *workBin = [[SLBin alloc] init];
-    workBin.name = @"Work";
-    workBin.notification = @NO;
-    workBin.emailCount = @10;
+    // Right Button
+    UIBarButtonItem *searchBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(profileBarButtonPressed)];
+    self.navigationItem.rightBarButtonItem = searchBarButton;
     
-    SLBin *promotionsBin = [[SLBin alloc] init];
-    promotionsBin.name = @"Promotions";
-    promotionsBin.notification = @NO;
-    promotionsBin.emailCount = @29;
-    
-    self.binsArray = [@[familyAndFriendsBin, workBin, promotionsBin] mutableCopy];
+    // Title view
+    UISegmentedControl *readSegmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Unread", @"All"]];
+    [readSegmentedControl addTarget:self action:@selector(readSegmentedControlPressed:) forControlEvents:UIControlEventValueChanged];
+    readSegmentedControl.selectedSegmentIndex = 0;
+    self.navigationItem.titleView = readSegmentedControl;
 }
 
+- (void)readSegmentedControlPressed:(UISegmentedControl *)sender
+{
+    
+}
+
+- (void)profileBarButtonPressed
+{
+    // Do something
+}
+
+#pragma mark - UI Stuff
 
 #pragma mark - UITableViewDatasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -91,7 +108,7 @@
 -(NSInteger)collectionView:(SLBinCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     SLBin *bin = self.binsArray[collectionView.index];
-    return [bin.emailCount integerValue];
+    return bin.sendersArray.count;
 }
 
 -(UICollectionViewCell *)collectionView:(SLBinCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -99,12 +116,14 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kSLBinCollectionViewIdentifier forIndexPath:indexPath];
     
     // Random colors!
-    CGFloat red = arc4random() % 255;
-    CGFloat green = arc4random() % 255;
-    CGFloat blue = arc4random() % 255;
-    UIColor *backgroundColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0f];
+//    CGFloat red = arc4random() % 255;
+//    CGFloat green = arc4random() % 255;
+//    CGFloat blue = arc4random() % 255;
+//    UIColor *backgroundColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0f];
+//    
+//    cell.backgroundColor = backgroundColor;
     
-    cell.backgroundColor = backgroundColor;
+
     
     return cell;
 }
@@ -142,5 +161,23 @@
 {
     NSLog(@"did end drag");
 }
+
+
+
+
+#pragma mark - Network stuff
+
+#pragma mark - SLAPIManagerDelegate
+- (void)didGetUserProfile:(SLUser *)user {
+    self.user = user;
+}
+
+- (void)didGetUserBins:(NSArray *)binsArray {
+    self.binsArray = [binsArray copy];
+    [self.tableView reloadData];
+}
+
+
+
 
 @end

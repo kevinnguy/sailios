@@ -21,6 +21,10 @@
 		0A0DF1BB18D4DCA000372732 /* SailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1BA18D4DCA000372732 /* SailTests.m */; };
 		0A0DF1C618D4DEF700372732 /* SLMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */; };
 		0A0DF1C918D4DF6300372732 /* SLBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DF1C818D4DF6300372732 /* SLBin.m */; };
+		0A3EDC4E18D51644004B8D42 /* SLSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EDC4D18D51644004B8D42 /* SLSender.m */; };
+		0A3EDC5118D5165A004B8D42 /* SLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EDC5018D5165A004B8D42 /* SLUser.m */; };
+		0A3EDC5518D517C7004B8D42 /* SLAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EDC5418D517C7004B8D42 /* SLAPIManager.m */; };
+		0A3EDC5818D52DD9004B8D42 /* SLBinCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EDC5718D52DD9004B8D42 /* SLBinCollectionViewCell.m */; };
 		0A46C20818D4E387009D3339 /* SLBinCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20718D4E387009D3339 /* SLBinCollectionView.m */; };
 		0A46C20E18D4E41B009D3339 /* SLBinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */; };
 		86A0CF965FD2451591D5A11E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457247BDC31B4CD5AD9516B4 /* libPods.a */; };
@@ -57,6 +61,14 @@
 		0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMainTableViewController.m; sourceTree = "<group>"; };
 		0A0DF1C718D4DF6200372732 /* SLBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBin.h; sourceTree = "<group>"; };
 		0A0DF1C818D4DF6300372732 /* SLBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBin.m; sourceTree = "<group>"; };
+		0A3EDC4C18D51644004B8D42 /* SLSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSender.h; sourceTree = "<group>"; };
+		0A3EDC4D18D51644004B8D42 /* SLSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSender.m; sourceTree = "<group>"; };
+		0A3EDC4F18D5165A004B8D42 /* SLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLUser.h; sourceTree = "<group>"; };
+		0A3EDC5018D5165A004B8D42 /* SLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLUser.m; sourceTree = "<group>"; };
+		0A3EDC5318D517C7004B8D42 /* SLAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAPIManager.h; sourceTree = "<group>"; };
+		0A3EDC5418D517C7004B8D42 /* SLAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAPIManager.m; sourceTree = "<group>"; };
+		0A3EDC5618D52DD9004B8D42 /* SLBinCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinCollectionViewCell.h; sourceTree = "<group>"; };
+		0A3EDC5718D52DD9004B8D42 /* SLBinCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBinCollectionViewCell.m; sourceTree = "<group>"; };
 		0A46C20618D4E387009D3339 /* SLBinCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinCollectionView.h; sourceTree = "<group>"; };
 		0A46C20718D4E387009D3339 /* SLBinCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBinCollectionView.m; sourceTree = "<group>"; };
 		0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBinTableViewCell.h; sourceTree = "<group>"; };
@@ -125,16 +137,12 @@
 		0A0DF19B18D4DCA000372732 /* Sail */ = {
 			isa = PBXGroup;
 			children = (
+				0A3EDC4B18D50F57004B8D42 /* Controller */,
+				0A3EDC4A18D50F51004B8D42 /* View */,
+				0A3EDC4918D50F48004B8D42 /* Model */,
+				0A3EDC5218D517AD004B8D42 /* Network */,
 				0A0DF1A418D4DCA000372732 /* SLAppDelegate.h */,
 				0A0DF1A518D4DCA000372732 /* SLAppDelegate.m */,
-				0A0DF1C418D4DEF700372732 /* SLMainTableViewController.h */,
-				0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */,
-				0A0DF1C718D4DF6200372732 /* SLBin.h */,
-				0A0DF1C818D4DF6300372732 /* SLBin.m */,
-				0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */,
-				0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */,
-				0A46C20618D4E387009D3339 /* SLBinCollectionView.h */,
-				0A46C20718D4E387009D3339 /* SLBinCollectionView.m */,
 				0A0DF1A718D4DCA000372732 /* Images.xcassets */,
 				0A0DF19C18D4DCA000372732 /* Supporting Files */,
 			);
@@ -168,6 +176,50 @@
 				0A0DF1B718D4DCA000372732 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A3EDC4918D50F48004B8D42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A0DF1C718D4DF6200372732 /* SLBin.h */,
+				0A0DF1C818D4DF6300372732 /* SLBin.m */,
+				0A3EDC4C18D51644004B8D42 /* SLSender.h */,
+				0A3EDC4D18D51644004B8D42 /* SLSender.m */,
+				0A3EDC4F18D5165A004B8D42 /* SLUser.h */,
+				0A3EDC5018D5165A004B8D42 /* SLUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0A3EDC4A18D50F51004B8D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A46C20C18D4E41B009D3339 /* SLBinTableViewCell.h */,
+				0A46C20D18D4E41B009D3339 /* SLBinTableViewCell.m */,
+				0A46C20618D4E387009D3339 /* SLBinCollectionView.h */,
+				0A46C20718D4E387009D3339 /* SLBinCollectionView.m */,
+				0A3EDC5618D52DD9004B8D42 /* SLBinCollectionViewCell.h */,
+				0A3EDC5718D52DD9004B8D42 /* SLBinCollectionViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0A3EDC4B18D50F57004B8D42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A0DF1C418D4DEF700372732 /* SLMainTableViewController.h */,
+				0A0DF1C518D4DEF700372732 /* SLMainTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0A3EDC5218D517AD004B8D42 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EDC5318D517C7004B8D42 /* SLAPIManager.h */,
+				0A3EDC5418D517C7004B8D42 /* SLAPIManager.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +356,13 @@
 				0A0DF1C618D4DEF700372732 /* SLMainTableViewController.m in Sources */,
 				0A0DF1A218D4DCA000372732 /* main.m in Sources */,
 				0A46C20E18D4E41B009D3339 /* SLBinTableViewCell.m in Sources */,
+				0A3EDC5518D517C7004B8D42 /* SLAPIManager.m in Sources */,
 				0A0DF1C918D4DF6300372732 /* SLBin.m in Sources */,
+				0A3EDC4E18D51644004B8D42 /* SLSender.m in Sources */,
 				0A0DF1A618D4DCA000372732 /* SLAppDelegate.m in Sources */,
+				0A3EDC5118D5165A004B8D42 /* SLUser.m in Sources */,
 				0A46C20818D4E387009D3339 /* SLBinCollectionView.m in Sources */,
+				0A3EDC5818D52DD9004B8D42 /* SLBinCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,29 @@
 
 #import "SLBin.h"
 
+#import "SLSender.h"
+
 @implementation SLBin
+
+- (instancetype)init
+{
+    return [self initWithJSONDictionary:nil];
+}
+
+- (instancetype)initWithJSONDictionary:(NSDictionary *)jsonDictionary
+{
+    if (self = [super init]) {
+        self.name = jsonDictionary[@"title"];
+        
+        NSMutableArray *sendersArray = [NSMutableArray new];
+        for (NSDictionary *senderDictionary in jsonDictionary[@"senders"]) {
+            SLSender *sender = [[SLSender alloc] initWithJSONDictionary:senderDictionary];
+            [sendersArray addObject:sender];
+        }
+        self.sendersArray = [sendersArray copy];
+    }
+    
+    return self;
+}
 
 @end

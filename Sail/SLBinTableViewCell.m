@@ -7,9 +7,9 @@
 //
 
 #import "SLBinTableViewCell.h"
+#import "SLBinCollectionViewCell.h"
 
 NSString *const kSLBinTableViewCellIdentifier = @"SLBinTableViewCellIdentifier";
-NSString *const kSLBinCollectionViewIdentifier = @"SLBinCollectionViewIdentifier";
 
 @implementation SLBinTableViewCell
 
@@ -28,7 +28,7 @@ NSString *const kSLBinCollectionViewIdentifier = @"SLBinCollectionViewIdentifier
         
         // Collection view
         self.collectionView = [[SLBinCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kSLBinCollectionViewIdentifier];
+        [self.collectionView registerClass:[SLBinCollectionViewCell class] forCellWithReuseIdentifier:kSLBinCollectionViewCellIdentifier];
         self.collectionView.backgroundColor = [UIColor whiteColor];
         self.collectionView.showsHorizontalScrollIndicator = NO;
         [self.contentView addSubview:self.collectionView];
